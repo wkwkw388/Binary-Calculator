@@ -1,0 +1,256 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Animated Background -->
+    <div class="background">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <main class="container">
+
+        <!-- ================= LEFT: CALCULATOR ================= -->
+        <section class="calculator">
+
+            <div class="calculator-header">
+                <h1>Calculator</h1>
+                <p>Binary • Decimal • Hexadecimal</p>
+            </div>
+
+            <!-- MODES -->
+            <div class="mode-buttons">
+
+                <button id="normalMode"
+                        class="mode active"
+                        onclick="changeMode('NORMAL')">
+                    NORMAL
+                </button>
+
+                <button id="binMode"
+                        class="mode"
+                        onclick="changeMode('BIN')">
+                    BIN
+                </button>
+
+                <button id="decMode"
+                        class="mode"
+                        onclick="changeMode('DEC')">
+                    DEC
+                </button>
+
+                <button id="hexMode"
+                        class="mode"
+                        onclick="changeMode('HEX')">
+                    HEX
+                </button>
+
+            </div>
+
+
+            <!-- DISPLAY -->
+            <div class="display-container">
+
+                <div id="display">0</div>
+
+                <div class="conversion-row">
+
+                    <div class="conversion-box">
+                        <small>BIN</small>
+                        <span id="binValue">-</span>
+                    </div>
+
+                    <div class="conversion-box">
+                        <small>DEC</small>
+                        <span id="decValue">-</span>
+                    </div>
+
+                    <div class="conversion-box">
+                        <small>HEX</small>
+                        <span id="hexValue">-</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CALCULATOR BUTTONS -->
+            <div class="buttons">
+
+                <!-- Row 1 -->
+                <button class="special hex-button"
+                        onclick="inputHex('A')">
+                    A
+                </button>
+
+                <button class="special hex-button"
+                        onclick="inputHex('B')">
+                    B
+                </button>
+
+                <button class="special hex-button"
+                        onclick="inputHex('C')">
+                    C
+                </button>
+
+                <button class="special hex-button"
+                        onclick="inputHex('D')">
+                    D
+                </button>
+
+
+                <!-- Row 2 -->
+                <button class="special hex-button"
+                        onclick="inputHex('E')">
+                    E
+                </button>
+
+                <button class="special hex-button"
+                        onclick="inputHex('F')">
+                    F
+                </button>
+
+                <button class="special"
+                        onclick="clearCalculator()">
+                    AC
+                </button>
+
+                <button class="special backspace"
+                        onclick="backspace()">
+                    ⌫
+                </button>
+
+
+                <!-- Row 3 -->
+                <button class="special"
+                        onclick="percentage()">
+                    %
+                </button>
+
+                <button class="operator"
+                        onclick="inputOperator('+')">
+                    +
+                </button>
+
+                <button onclick="inputNumber('7')">7</button>
+
+                <button onclick="inputNumber('8')">8</button>
+
+
+                <!-- Row 4 -->
+                <button onclick="inputNumber('9')">9</button>
+
+                <button class="operator"
+                        onclick="inputOperator('*')">
+                    ×
+                </button>
+
+                <button onclick="inputNumber('4')">4</button>
+
+                <button onclick="inputNumber('5')">5</button>
+
+
+                <!-- Row 5 -->
+                <button onclick="inputNumber('6')">6</button>
+
+                <button class="operator"
+                        onclick="inputOperator('-')">
+                    −
+                </button>
+
+                <button onclick="inputNumber('1')">1</button>
+
+                <button onclick="inputNumber('2')">2</button>
+
+
+                <!-- Row 6 -->
+                <button onclick="inputNumber('3')">3</button>
+
+                <button class="operator"
+                        onclick="inputOperator('/')">
+                    ÷
+                </button>
+
+                <button class="zero"
+                        onclick="inputNumber('0')">
+                    0
+                </button>
+
+
+                <!-- Row 7 -->
+                <button onclick="inputDecimal()">.</button>
+
+                <button class="equals"
+                        onclick="calculate()">
+                    =
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= RIGHT: EXPLANATION ================= -->
+
+        <section class="solution-panel">
+
+            <div class="solution-header">
+                <h2>How It Was Solved</h2>
+                <p>Step-by-step calculation</p>
+            </div>
+
+            <div id="solution" class="solution-content">
+
+                <div class="solution-welcome">
+
+                    <div class="calculator-icon">🧮</div>
+
+                    <h3>Normal Calculator</h3>
+
+                    <p>
+                        Choose a mode and perform a calculation.
+                        The solution will appear here step-by-step.
+                    </p>
+
+                    <div class="example">
+                        <strong>Addition:</strong>
+                        25 + 10 = 35
+                    </div>
+
+                    <div class="example">
+                        <strong>Subtraction:</strong>
+                        25 − 10 = 15
+                    </div>
+
+                    <div class="example">
+                        <strong>Multiplication:</strong>
+                        5 × 4 = 20
+                    </div>
+
+                    <div class="example">
+                        <strong>Division:</strong>
+                        20 ÷ 4 = 5
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
